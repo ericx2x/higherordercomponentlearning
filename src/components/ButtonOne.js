@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 
-const styles ={
-    default : {
-        backgroundColor: '#737373',
-        color: '#eae8e8',
-        padding: '10px'
-    }, disable : {
-        backgroundColor: '#9c9c9c',
-        color: '#c7c6c6',
-    }
-}
 
 const ButtonOne = (props) => {
-    const _styles = {...styles.default}
-    console.log(_styles);
+    let _styles = {...styles.default};
     if (props.disable){
-
+        _styles = {...styles, ...styles.disable};
+        console.log(_styles);
     }
     return (
-        <button style={styles.default}>I am ButtonOne</button>
+        <button style={_styles}>I am ButtonOne</button>
     )
 }
 
